@@ -275,7 +275,7 @@ kafka-console-consumer.sh \
   
   ```bash
   /opt/kafka/bin/kafka-console-consumer.sh \
-      --bootstrap-server w01.itversity.com:9092,w02.itversity.com:9092 \
+      --bootstrap-server localhost:9092 \
       --topic `whoami`_retail
   ```
 
