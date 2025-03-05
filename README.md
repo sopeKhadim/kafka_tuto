@@ -4,7 +4,7 @@ L'objectif de ce tuturial est de vous permettre de faire une prise en main du st
 
 ## Installation
 
-Nous allons installer kafa dans notre mini-cluster hadoop vagrant en suivant les étapes suivant.
+Nous allons installer kafa dans notre mini-cluster  [hadoop vagrant](https://github.com/sopeKhadim/hadoopVagrant.git) en suivant les étapes suivant.
 
 - Téléchargement
 
@@ -180,7 +180,7 @@ kafka-console-consumer.sh \
   
     ```bash
     kafka-topics.sh \
-      --zookeeper m01.itversity.com:2181,m02.itversity.com:2181,w01.itversity.com:2181 \
+      --bootstrap-server localhost:9092 \
       --describe \
       --topic `whoami`_retail
      ```
@@ -242,6 +242,7 @@ kafka-console-consumer.sh \
     ```
     
     - Mettre à jour **retail_logs_file_source.properties**
+    
     Définissez l'emplacement du fichier et le nom du topic Kafka
     
     ```bash
@@ -271,7 +272,7 @@ kafka-console-consumer.sh \
       retail_logs_file_source.properties
   ```
   
-  - Exécutant le script kafka-console-consumer.sh dans une autre session de terminal pour valider l'ingestion:
+  - Exécuter le script **kafka-console-consumer.sh** dans une autre session de terminal pour valider l'ingestion:
   
   ```bash
   /opt/kafka/bin/kafka-console-consumer.sh \
